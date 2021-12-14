@@ -1,5 +1,7 @@
 # The MIT License (MIT)
 
+Copyright (c) 2021 Caine85
+
 Copyright (c) 2018 Martynas Žaliaduonis <m.zaliaduonis@gmail.com>
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
