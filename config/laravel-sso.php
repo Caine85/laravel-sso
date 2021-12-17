@@ -23,10 +23,10 @@ return [
      |
      */
 
-    'usersModel' => \App\User::class,
-    'brokersModel' => Zefy\LaravelSSO\Models\Broker::class,
+    'usersModel' => \App\Models\User::class,
+    'brokersModel' => Aperion\LaravelSSO\Models\Broker::class,
 
-    // Table used in Zefy\LaravelSSO\Models\Broker model
+    // Table used in Aperion\LaravelSSO\Models\Broker model
     'brokersTable' => 'brokers',
 
     // Logged in user fields sent to brokers.

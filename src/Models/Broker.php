@@ -1,6 +1,6 @@
 <?php
 
-namespace Zefy\LaravelSSO\Models;
+namespace Aperion\LaravelSSO\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

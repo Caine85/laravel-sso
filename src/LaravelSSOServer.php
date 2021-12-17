@@ -1,13 +1,13 @@
 <?php
 
-namespace Zefy\LaravelSSO;
+namespace Aperion\LaravelSSO;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
-use Zefy\SimpleSSO\SSOServer;
-use Zefy\LaravelSSO\Resources\UserResource;
+use Aperion\SimpleSSO\SSOServer;
+use Aperion\LaravelSSO\Resources\UserResource;
 
 class LaravelSSOServer extends SSOServer
 {

@@ -1,12 +1,12 @@
 # Simple PHP SSO integration for Laravel
 
-[![Latest Stable Version](https://poser.pugx.org/zefy/laravel-sso/v/stable)](https://packagist.org/packages/zefy/laravel-sso)
-[![Total Downloads](https://poser.pugx.org/zefy/laravel-sso/downloads)](https://packagist.org/packages/zefy/laravel-sso)
-[![Latest Unstable Version](https://poser.pugx.org/zefy/laravel-sso/v/unstable)](https://packagist.org/packages/zefy/laravel-sso)
-[![License](https://poser.pugx.org/zefy/laravel-sso/license)](https://packagist.org/packages/zefy/laravel-sso)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zefy/laravel-sso/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zefy/laravel-sso/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/zefy/laravel-sso/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zefy/laravel-sso/build-status/master)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/zefy/laravel-sso/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![Latest Stable Version](https://poser.pugx.org/aperion/laravel-sso/v/stable)](https://packagist.org/packages/aperion/laravel-sso)
+[![Total Downloads](https://poser.pugx.org/aperion/laravel-sso/downloads)](https://packagist.org/packages/aperion/laravel-sso)
+[![Latest Unstable Version](https://poser.pugx.org/aperion/laravel-sso/v/unstable)](https://packagist.org/packages/aperion/laravel-sso)
+[![License](https://poser.pugx.org/aperion/laravel-sso/license)](https://packagist.org/packages/aperion/laravel-sso)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aperion/laravel-sso/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aperion/laravel-sso/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/aperion/laravel-sso/badges/build.png?b=master)](https://scrutinizer-ci.com/g/aperion/laravel-sso/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/aperion/laravel-sso/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
@@ -29,19 +29,19 @@ Client visits Broker and unique token is generated. When new token is generated 
 ### Server
 Install this package using composer.
 ```shell
-$ composer require zefy/laravel-sso
+$ composer require aperion/laravel-sso
 ```
 
 
 Copy config file to Laravel project `config/` folder.
 ```shell
-$ php artisan vendor:publish --provider="Zefy\LaravelSSO\SSOServiceProvider"
+$ php artisan vendor:publish --provider="Aperion\LaravelSSO\SSOServiceProvider"
 ```
 
 
 Create table where all brokers will be saved.
 ```shell
-$ php artisan migrate --path=vendor/zefy/laravel-sso/database/migrations
+$ php artisan migrate --path=vendor/aperion/laravel-sso/database/migrations
 ```
 
 
@@ -66,13 +66,13 @@ $ php artisan sso:broker:create {name}
 ### Broker
 Install this package using composer.
 ```shell
-$ composer require zefy/laravel-sso
+$ composer require aperion/laravel-sso
 ```
 
 
 Copy config file to Laravel project `config/` folder.
 ```shell
-$ php artisan vendor:publish --provider="Zefy\LaravelSSO\SSOServiceProvider"
+$ php artisan vendor:publish --provider="Aperion\LaravelSSO\SSOServiceProvider"
 ```
 
 
@@ -91,12 +91,12 @@ SSO_BROKER_SECRET=
 
 
 
-Edit your `app/Http/Kernel.php` by adding `\Zefy\LaravelSSO\Middleware\SSOAutoLogin::class` middleware to `web` middleware group. It should look like this:
+Edit your `app/Http/Kernel.php` by adding `\Aperion\LaravelSSO\Middleware\SSOAutoLogin::class` middleware to `web` middleware group. It should look like this:
 ```php
 protected $middlewareGroups = [
         'web' => [
             ...
-            \Zefy\LaravelSSO\Middleware\SSOAutoLogin::class,
+            \Aperion\LaravelSSO\Middleware\SSOAutoLogin::class,
         ],
 
         'api' => [
@@ -111,7 +111,7 @@ Last but not least, you need to edit `app/Http/Controllers/Auth/LoginController.
 ```php
 protected function attemptLogin(Request $request)
 {
-    $broker = new \Zefy\LaravelSSO\LaravelSSOBroker;
+    $broker = new \Aperion\LaravelSSO\LaravelSSOBroker;
     
     $credentials = $this->credentials($request);
     return $broker->login($credentials[$this->username()], $credentials['password']);
@@ -119,7 +119,7 @@ protected function attemptLogin(Request $request)
 
 public function logout(Request $request)
 {
-    $broker = new \Zefy\LaravelSSO\LaravelSSOBroker;
+    $broker = new \Aperion\LaravelSSO\LaravelSSOBroker;
     
     $broker->logout();
     

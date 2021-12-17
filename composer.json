@@ -1,33 +1,51 @@
 {
-    "name": "zefy/laravel-sso",
-    "description": "Simple PHP SSO integration for Laravel",
-    "keywords": ["laravel", "sso", "authentication", "login"],
-    "homepage": "https://github.com/zefy/laravel-sso",
-    "license": "MIT",
-    "authors": [
-      {
-        "name": "Martynas Žaliaduonis",
-        "email": "m.zaliaduonis@gmail.com",
-        "homepage": "https://github.com/zefy",
-        "role": "Developer"
-      }
-    ],
-    "require": {
-        "php": ">=7.1.3",
-        "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "^5.5",
-        "zefy/php-simple-sso": "^1.0"
+  "name": "aperion/laravel-sso",
+  "description": "Simple PHP SSO integration for Laravel",
+  "keywords": [
+    "laravel",
+    "sso",
+    "authentication",
+    "login"
+  ],
+  "homepage": "https://github.com/caine85/laravel-sso",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martynas Žaliaduonis",
+      "email": "m.zaliaduonis@gmail.com",
+      "homepage": "https://github.com/aperion",
+      "role": "Developer"
     },
-    "autoload": {
-      "psr-4": {
-        "Zefy\\LaravelSSO\\": "src/"
-      }
-    },
-    "extra": {
-      "laravel": {
-        "providers": [
-            "Zefy\\LaravelSSO\\SSOServiceProvider"
-        ]
-      }
+    {
+      "name": "Andrea Venanzi",
+      "email": "venanzi@aperion.net",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "php": ">=7.1.3",
+    "aperion/php-simple-sso": "dev-master",
+    "guzzlehttp/guzzle": "^7.0.1",
+    "laravel/framework": "^8.65"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Caine85/php-simple-sso.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Aperion\\LaravelSSO\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Aperion\\LaravelSSO\\SSOServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

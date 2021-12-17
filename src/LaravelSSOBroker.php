@@ -1,10 +1,10 @@
 <?php
 
-namespace Zefy\LaravelSSO;
+namespace Aperion\LaravelSSO;
 
 use Illuminate\Support\Facades\Cookie;
-use Zefy\LaravelSSO\Exceptions\MissingConfigurationException;
-use Zefy\SimpleSSO\SSOBroker;
+use Aperion\LaravelSSO\Exceptions\MissingConfigurationException;
+use Aperion\SimpleSSO\SSOBroker;
 use GuzzleHttp;
 
 /**
@@ -12,7 +12,7 @@ use GuzzleHttp;
  * First of all, you need to implement abstract functions in your own class.
  * Secondly, you should create a page which will be your SSO server.
  *
- * @package Zefy\SimpleSSO
+ * @package Aperion\SimpleSSO
  */
 class LaravelSSOBroker extends SSOBroker
 {
